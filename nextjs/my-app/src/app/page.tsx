@@ -3,7 +3,7 @@ import styles from "./page.module.css";
 
 
 async function getData() {
-  const res = await fetch('https://api.slingacademy.com/v1/sample-data/products?limit=1000')
+  const res = await fetch('https://api.slingacademy.com/v1/sample-data/products?limit=10000')
   // The return value is *not* serialized
   // You can return Date, Map, Set, etc.
  
@@ -20,13 +20,51 @@ export default async function Home() {
   return (
     <main className={styles.main}>
       <h1>Nexjs</h1>
-      {
-        data.products.map((data: any) => (
-          <div key={data.id}>
-            <Image src={data.photo_url} alt="."  width={500} height={500}/>
-          </div>
-        ))
-      }
+        <table>
+          <tr>
+            <td>
+              {
+                data.products.map((data: any) => (
+              <div key={data.id}>
+                <Image src={data.photo_url} alt="."  width={500} height={500}/>
+              </div>
+            ))}
+            </td>
+            <td>
+              {
+                data.products.map((data: any) => (
+              <div key={data.id}>
+                <Image src={data.photo_url} alt="."  width={500} height={500}/>
+              </div>
+            ))}
+            </td>
+            <td>
+              {
+                data.products.map((data: any) => (
+              <div key={data.id}>
+                <Image src={data.photo_url} alt="."  width={500} height={500}/>
+              </div>
+            ))}
+            </td>
+            <td>
+              {
+                data.products.map((data: any) => (
+              <div key={data.id}>
+                <Image src={data.photo_url} alt="."  width={500} height={500}/>
+              </div>
+            ))}
+            </td>
+            <td>
+              {
+                data.products.map((data: any) => (
+              <div key={data.id}>
+                <Image src={data.photo_url} alt="."  width={500} height={500}/>
+              </div>
+            ))}
+            </td>
+          </tr>
+        </table>
+        
     </main>
   );
 }
